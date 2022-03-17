@@ -1,4 +1,4 @@
-# stulletal_mcp
+# MCP_S-Age_Pipeline
 This repository contains the source code for our paper:
 
 > K.E. Stull, E.Y. Chu, L. Corron,  and M.H. Price, (2021). *Mixed Cumulative Probit: A novel algorithm inspired by methodological and practical shortcomings of age estimation in biological and forensic anthropology*. In review.
@@ -41,13 +41,13 @@ Cloning this repository means that you copy all files and scripts to your local 
 
 ```console
 cd "file/path/to/desired/repository/location"
-git clone https://github.com/ElaineYChu/stulletal_mcp
-cd stulletal_mcp
+git clone https://github.com/ElaineYChu/MCP_S-Age_Pipeline
+cd MCP_S-Age_Pipeline
 ls
 ```
 These four lines of code will a) set the location where you want to save the repository, b) clone the repository, c) enter the newly-created directory, and d) list its contents.  
 
-2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("stulletal_mcp-main") and relocate it to your desired folder location. **Next, rename the folder to "stulletal_mcp" before proceeding further.**
+2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("MCP_S-Age_Pipeline-main") and relocate it to your desired folder location. **Next, rename the folder to "MCP_S-Age_Pipeline" before proceeding further.**
 
 Another noteworthy file included in this repository is the **"MCP_Quick_Ref.pdf"** file, which contains the information for available usages for the mixed cumulative probit ("MCP") and how to alter the scripts for one's own analyses and new data.
 
@@ -80,9 +80,9 @@ The following pipeline is recommended:
 **Set the R working directory to the root of the cloned directory** (e.g., using `setwd()`):
 
 ``` r
-setwd("file/path/to/folder/stulletal_mcp")
+setwd("file/path/to/folder/MCP_S-Age_Pipeline")
 ```
-Make sure the file/path/to/folder is the unique location for the folder *stulletal_mcp* or else this example pipeline will not work and you will get an error message.
+Make sure the file/path/to/folder is the unique location for the folder *MCP_S-Age_Pipeline* or else this example pipeline will not work and you will get an error message.
 
 Then run the following command in R:
 
@@ -245,14 +245,14 @@ First, [install Docker](https://docs.docker.com/engine/install/) and ensure that
 Second, clone this repository using git (these directions assume use of the terminal/command line, but see above for how to download the directory directly using git) and change directory (cd) into the base of the repository.
 
 ```console
-git clone https://github.com/ElaineYChu/stulletal_mcp
-cd stulletal_mcp
+git clone https://github.com/ElaineYChu/MCP_S-Age_Pipeline
+cd MCP_S-Age_Pipeline
 ```
 
 Third, run the following command at the terminal to build the Docker image. To force all docker material to be (re)downloaded prior to creating the Docker image -- a step you should be certain you want to take -- use: "docker system prune -a".
 
 ```console
-docker build -t michaelholtonprice/stulletal_mcp .
+docker build -t michaelholtonprice/MCP_S-Age_Pipeline .
 ```
 
 This will create a Linux image (Ubuntu 20.04), install R, install necessary dependencies, copy data and script files into the Docker image, and install R using the script install_yada.R that is part of this repository (specifically, commit b16034db9d81e59642ffda029ade8f91df669846 of yada is installed).
@@ -260,15 +260,15 @@ This will create a Linux image (Ubuntu 20.04), install R, install necessary depe
 Fourth, start a Docker container with the following command:
 
 ```console
-docker run --name stulletal_mcp -itv //c/stulletal_mcp_mirrored_dir:/mirrored_dir michaelholtonprice/stulletal_mcp
+docker run --name MCP_S-Age_Pipeline -itv //c/MCP_S-Age_Pipeline_mirrored_dir:/mirrored_dir michaelholtonprice/MCP_S-Age_Pipeline
 ```
 
-The preceding command places the user at a command line "inside" the Docker container. The -v tag in the command mirrors a directory on the host machine (C:\\stulletal_mcp_mirrored_dir) to a directory inside the Docker container (/mirrored_dir) that can be used to pass files between the host machine and the Docker container. The directory to the left of the semicolon is for the host machine and the directory to the right of the semicolon is for the Docker container. The path for the host machine may need to be modified for your situation.
+The preceding command places the user at a command line "inside" the Docker container. The -v tag in the command mirrors a directory on the host machine (C:\\MCP_S-Age_Pipeline_mirrored_dir) to a directory inside the Docker container (/mirrored_dir) that can be used to pass files between the host machine and the Docker container. The directory to the left of the semicolon is for the host machine and the directory to the right of the semicolon is for the Docker container. The path for the host machine may need to be modified for your situation.
 
-Fifth, change directory (cd) into stulletal_mcp (where files were copied during creation of the Docker image; see the Dockerfile) and run all the analysis scripts:
+Fifth, change directory (cd) into MCP_S-Age_Pipeline (where files were copied during creation of the Docker image; see the Dockerfile) and run all the analysis scripts:
 
 ```console
-cd stulletal_mcp
+cd MCP_S-Age_Pipeline
 Rscript run_all_analyses.R
 ```
 

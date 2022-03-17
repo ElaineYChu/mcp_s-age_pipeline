@@ -1,10 +1,11 @@
 # The preceding script in the "pipeline" is write_US_problems.R, which writes
 # both the main problem and cross-validation problems to the results folder
-# (stulletal_mcp/results). This script, "solvey_US_univariate.R", does maximum
-# likelihood on a univariate distribution for each response variable, which is 
-# equivalent to a multivariate fit assuming conditional independence ('cindep') 
-# of the  variables. These fits are the basis for the cross-validation 
-# accomplished by the script "make_univariate_crossval_results.R", which is the 
+# (MCP_S-Age_Pipeline/results). This script, "solvey_US_univariate.R", does 
+# maximum likelihood on a univariate distribution for each response variable, 
+# which is equivalent to a multivariate fit assuming conditional independence 
+# ('cindep') of the  variables. These fits are the basis for the 
+# cross-validation accomplished by the script 
+# "make_univariate_crossval_results.R", which is the 
 # ensuing step in the analysis pipeline. For the main problem and each cross 
 # validation fold, six parametric models are fit for the ordinal variables 
 # and two parametric models are fit for the continuous variables. For the 
@@ -38,8 +39,8 @@
 #
 # While the preceding script in the pipeline may need to be modified (for
 # example, because different preprocessing steps are needed), this function
-# may not need modification, aside from using a folder other than "stulletal_mcp"
-# and an analysis name other than "US".
+# may not need modification, aside from using a folder other than 
+# "MCP_S-Age_Pipeline" and an analysis name other than "US".
 
 # Load libraries
 library(yada)
