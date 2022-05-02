@@ -17,15 +17,17 @@ Please cite this compendium as:
 # Setup
 This research compendium has been developed using the statistical programming language R. To work with the compendium, you will need the [R software](https://cloud.r-project.org/) itself and optionally [RStudio Desktop](https://rstudio.com/products/rstudio/download/). If you only have R and do not have RStudio, you will additionally have to install [Pandoc](https://pandoc.org/installing.html).
 
-Below, we provide directions for [running the analyses using a Docker image](#Docker). One advantage of using Docker is that R's parallel processing libraries do not use forking on Windows, so running inside a Linux Docker container on Windows usually yields a much faster runtime for the multivariate optimization. *Due to the different ways in which result replication methods, such as using* `set.seed()`*, are initialized between operating systems, the only true way to replicate the results of this publication are to run the analyses in Docker.*
+Below, we provide directions for [running the analyses using a Docker image](#Docker). One advantage of using Docker is that R's parallel processing libraries do not use forking on Windows, so running inside a Linux Docker container on Windows usually yields a much faster runtime for the multivariate optimization. 
+
+*Due to the different ways in which result replication methods, such as using* `set.seed()`*, are initialized between operating systems, the only true way to replicate the results of this publication are to run the analyses in Docker.*
 
 * The source code for this research compendium relies heavily on the R package `yada`, which can be found at the following **GitHub Repository**: https://github.com/MichaelHoltonPrice/yada. 
 
 * Full documentation of each of the functions used for *MCP algorithm optimization* are available via an [HTML Vignette](https://github.com/MichaelHoltonPrice/yada/tree/dev/inst/doc/yada_vignette.html)   
 
-* In the event that you would like to [Clone this Repository](#Clone) to follow the vignette using the same data, please refer to the instructions provided at the end of the README.
+* In the event that you would like to **Clone this Repository** to follow the vignette using the same data, please refer to the instructions provided at the end of the README.
 
-# Running the analyses using Docker  {#Docker}
+# Running the analyses using Docker
 Docker provides an appealing framework for running reproducible scientific analyses that we hope will see greater use in the future. We have provided a [Dockerfile](Dockerfile) that defines a Docker image which can be used to run all our publication analyses.
 
 First, [install Docker](https://docs.docker.com/engine/install/) and ensure that it is available on the terminal/command line path.
@@ -65,7 +67,7 @@ Sixth and finally, copy the results to the mirrored directory:
 ```console
 cp -fr ./results /mirrored_dir
 ```
-# Cloning the Repository  {#Clone}
+# Cloning the Repository
 Cloning this repository means that you copy all files and scripts to your local system (*e.g.* laptop, desktop, server). There are two ways to achieve this goal:  
 
 1. If you are using a Mac operating system or have another shell terminal system (such as [Git for Windows](https://gitforwindows.org/)), open your terminal and enter the following commands:
@@ -78,6 +80,8 @@ ls
 ```
 These four lines of code will a) set the location where you want to save the repository, b) clone the repository, c) enter the newly-created directory, and d) list its contents.  
 
-2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("mcp_s-age_pipeline-main") and relocate it to your desired folder location. **From the folder, you can extract the data files to run the pipeline supplied by the [vignette](https://github.com/MichaelHoltonPrice/yada/tree/dev/inst/doc/yada_vignette.html) on your local system.**
+2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("mcp_s-age_pipeline-main") and relocate it to your desired folder location. 
+
+**From the folder, you can extract the data files to run the pipeline supplied by the [vignette](https://github.com/MichaelHoltonPrice/yada/tree/dev/inst/doc/yada_vignette.html) on your local system.**
 
 
