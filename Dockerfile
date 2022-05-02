@@ -2,13 +2,13 @@
 # container. The -v tag mirrors a folder on the host machine with the
 # /mirrored_dir folder in the Docker container.
 #
-# docker build -t michaelholtonprice/stulletal_mcp .
-# docker run --name stulletal_mcp -itv //c/stulletal_mcp_mirrored_dir:/mirrored_dir michaelholtonprice/stulletal_mcp
+# docker build -t michaelholtonprice/mcp_s-age_pipeline .
+# docker run --name mcp_s-age_pipeline -itv //c/mcp_s-age_pipeline_mirrored_dir:/mirrored_dir michaelholtonprice/mcp_s-age_pipeline
 #
 # If desired, the following command starts a container without mirroring a
 # directory on the host machine:
 #
-# docker run --name stulletal_mcp -it michaelholtonprice/stulletal_mcp
+# docker run --name mcp_s-age_pipeline -it michaelholtonprice/mcp_s-age_pipeline
 FROM ubuntu:20.04
 
 # Set the following environmental variable to avoid interactively setting the
@@ -31,25 +31,25 @@ RUN apt-get update && \
     apt-get clean
 
 # Make directories
-RUN mkdir stulletal_mcp
-RUN mkdir stulletal_mcp/results
-RUN mkdir stulletal_mcp/data
+RUN mkdir mcp_s-age_pipeline
+RUN mkdir mcp_s-age_pipeline/results
+RUN mkdir mcp_s-age_pipeline/data
 
 # Copy input files
-COPY /data/SVAD_US.csv /stulletal_mcp/data/SVAD_US.csv
-COPY /data/US_var_info.csv /stulletal_mcp/data/US_var_info.csv
+COPY /data/SVAD_US.csv /mcp_s-age_pipeline/data/SVAD_US.csv
+COPY /data/US_var_info.csv /mcp_s-age_pipeline/data/US_var_info.csv
 
 # Copy .R files
-COPY install_yada.R /stulletal_mcp/install_yada.R
-COPY make_multivariate_crossval_results.R /stulletal_mcp/make_multivariate_crossval_results.R
-COPY make_publication_results.R /stulletal_mcp/make_publication_results.R
-COPY make_univariate_crossval_results.R /stulletal_mcp/make_univariate_crossval_results.R
-COPY run_all_analyses.R /stulletal_mcp/run_all_analyses.R
-COPY solvex_US.R /stulletal_mcp/solvex_US.R
-COPY solvey_US_multivariate.R /stulletal_mcp/solvey_US_multivariate.R
-COPY solvey_US_univariate.R /stulletal_mcp/solvey_US_univariate.R
-COPY write_US_problems.R /stulletal_mcp/write_US_problems.R
+COPY install_yada.R /mcp_s-age_pipeline/install_yada.R
+COPY make_multivariate_crossval_results.R /mcp_s-age_pipeline/make_multivariate_crossval_results.R
+COPY make_publication_results.R /mcp_s-age_pipeline/make_publication_results.R
+COPY make_univariate_crossval_results.R /mcp_s-age_pipeline/make_univariate_crossval_results.R
+COPY run_all_analyses.R /mcp_s-age_pipeline/run_all_analyses.R
+COPY solvex_US.R /mcp_s-age_pipeline/solvex_US.R
+COPY solvey_US_multivariate.R /mcp_s-age_pipeline/solvey_US_multivariate.R
+COPY solvey_US_univariate.R /mcp_s-age_pipeline/solvey_US_univariate.R
+COPY write_US_problems.R /mcp_s-age_pipeline/write_US_problems.R
 
 # Install the specific yada commit that was used for publication with the
 # following file. This also install dplyr, ggplot2, and tidyr.
-RUN Rscript stulletal_mcp/install_yada.R
+RUN Rscript mcp_s-age_pipeline/install_yada.R

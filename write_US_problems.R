@@ -1,6 +1,6 @@
 # Overview of script
 # Goal: Our goal with the comments in this script (and others in the 
-# MCP_S-Age_Pipeline repository) is not just to describe the immediate analysis, 
+# mcp_s-age_pipeline repository) is not just to describe the immediate analysis, 
 # but also to describe how the script(s) can be modified to fit mixed 
 # cumulative probit models using other datasets.
 #
@@ -78,10 +78,10 @@ library(yada)
 # Clear the workspace
 rm(list=ls())
 
-# Check that MCP_S-Age_Pipeline is the working directory
-if(grepl('MCP_S-Age_Pipeline',getwd())==FALSE) {
+# Check that mcp_s-age_pipeline is the working directory
+if(grepl('mcp_s-age_pipeline',getwd())==FALSE) {
   stop(paste0("Please check that your working directory is the ",
-              "cloned directory 'MCP_S-Age_Pipeline'"))
+              "cloned directory 'mcp_s-age_pipeline'"))
 }
 
 # Load the variable information file. var_info is a data frame where rows are
@@ -91,7 +91,7 @@ data_file <- 'data/SVAD_US.csv'
 cp_data <- load_cp_data(data_file, var_info)
 
 # Extract the main problem (that is, not a cross-validation fold) from cp_data,
-# then save it to MCP_S-Age_Pipeline/results. This creates the following file in that
+# then save it to mcp_s-age_pipeline/results. This creates the following file in that
 # directory:
 # problem_US.rds
 #
@@ -109,7 +109,7 @@ save_problem(data_dir, analysis_name, main_problem)
 cv_problems <- generate_cv_problems(main_problem, K=4, seed=234227327)
 
 # Save the cross-validation problems to file. This creates the following eight
-# files in MCP_S-Age_Pipeline/results
+# files in mcp_s-age_pipeline/results
 #
 # train_US_fold1.rds
 #  test_US_fold1.rds
