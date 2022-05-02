@@ -23,7 +23,7 @@ Below, we provide directions for [running the analyses using a Docker image](#Do
 
 * The source code for this research compendium relies heavily on the R package `yada`, which can be found at the following **GitHub Repository**: https://github.com/MichaelHoltonPrice/yada. 
 
-* Full documentation of each of the functions used for *MCP algorithm optimization* are available via an [HTML Vignette](https://github.com/MichaelHoltonPrice/yada/tree/dev/inst/doc/yada_vignette.html)   
+* Full documentation of each of the functions used for *MCP algorithm optimization* are available via an [HTML Vignette](https://rpubs.com/elainechu/mcp_vignette)   
 
 * In the event that you would like to **Clone this Repository** to follow the vignette using the same data, please refer to the instructions provided at the end of the README.
 
@@ -82,6 +82,6 @@ These four lines of code will a) set the location where you want to save the rep
 
 2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("mcp_s-age_pipeline-main") and relocate it to your desired folder location. 
 
-**From the folder, you can extract the data files to run the pipeline supplied by the [vignette](https://github.com/MichaelHoltonPrice/yada/tree/dev/inst/doc/yada_vignette.html) on your local system.**
+**From the folder, you can extract the data files to run the pipeline supplied by the [vignette](https://rpubs.com/elainechu/mcp_vignette) on your local system.**
 
 
