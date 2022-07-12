@@ -73,12 +73,13 @@ Cloning this repository means that you copy all files and scripts to your local 
 1. If you are using a Mac operating system or have another shell terminal system (such as [Git for Windows](https://gitforwindows.org/)), open your terminal and enter the following commands:
 
 ```console
-cd "file/path/to/desired/repository/location"
+cd "file/path/to/desired/repository/location"  # we recommend cd "C:" for setting the location to the C-drive
 git clone https://github.com/ElaineYChu/mcp_s-age_pipeline
 cd mcp_s-age_pipeline
 ls
 ```
-These four lines of code will a) set the location where you want to save the repository, b) clone the repository, c) enter the newly-created directory, and d) list its contents.  
+
+These four lines of code will a) set the location where you want to save the repository (such as the C-drive), b) clone the repository, c) enter the newly-created directory, and d) list its contents.  
 
 2. If you do not have or are unfamiliar with terminal command systems, you may also locate and click on the green button in this repository labeled "Code" with a downward arrow and select "Download ZIP." This will download a zipped file to your local system (probably found in your *Downloads* folder). Extract the embedded folder ("mcp_s-age_pipeline-main") and relocate it to your desired folder location. 
 
